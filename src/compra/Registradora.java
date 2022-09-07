@@ -2,28 +2,11 @@ package compra;
 
 import java.util.Scanner;
 
-//import java.util.Arrays;
-
 public class Registradora {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		Compra c = new Compra();
 		boolean choice;
-		
-		//Inserindo itens
-		//ItemDeCompra item1 = new ItemDeCompra(123, "Mouse", 40.00, 1);
-		//ItemDeCompra item2 = new ItemDeCompra(231, "Teclado", 30.00, 2);
-		//c1.inserirItem(item1);
-		//c1.inserirItem(item2);
-		
-		
-		//System.out.println(Arrays.toString(c1.itens));
-
-		//c1.calcularTotalCompra();
-		//c1.darDesconto(30);
-		//c1.calcularTotalFinal();
-		
-		//System.out.println(c1.total);
 		
 		System.out.println("Bem vindo ao Mercadinho UECE");
 		
