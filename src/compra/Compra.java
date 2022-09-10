@@ -1,11 +1,11 @@
 package compra;
 
 public class Compra {
-	ItemDeCompra[] produtos = new ItemDeCompra[5]; //Array com os produtos comprados (Nome, preço e todas os atributos de um objeto da classe ItemDeCompra)
-	double total = 0.0; //Valor total da compra, que será definido com os métodos de inserir item e o de dar desconto, mas que por padrão é zero
-	double desconto = 0.0;
-	int formaDePagamento;
-	int quantidadeParcelas = 0; // Por padrão é zero, mas o usuário escolhe
+	private ItemDeCompra[] produtos = new ItemDeCompra[5]; //Array com os produtos comprados (Nome, preço e todas os atributos de um objeto da classe ItemDeCompra)
+	private double total = 0.0; //Valor total da compra, que será definido com os métodos de inserir item e o de dar desconto, mas que por padrão é zero
+	private double desconto = 0.0;
+	private int formaDePagamento;
+	private int quantidadeParcelas = 0; // Por padrão é zero, mas o usuário escolhe
 	
 	//Construtor padrão
 	Compra() {
@@ -15,6 +15,24 @@ public class Compra {
 	//Construtor iniciando com um array de Itens de Compra
 	Compra(ItemDeCompra[] produtos){
 		this.produtos = produtos;
+	}
+	
+	//Métodos Get
+	public ItemDeCompra[] getItensDeCompra() {
+		return this.produtos;
+	}
+	
+	public int getQuantidadeParcelas() {
+		return this.quantidadeParcelas;
+	}
+	
+	//Métodos Set
+	public void setQuantidadeParcelas(int quantidadeParcelas) {
+		this.quantidadeParcelas = quantidadeParcelas;
+	}
+	
+	public void setFormaDePagamento(int formaDePagamento) {
+		this.formaDePagamento = formaDePagamento;
 	}
 	
 	//Método de inserir um item no array de Itens de Compra
@@ -56,10 +74,10 @@ public class Compra {
 		System.out.println();
 		for(int i = 0; i < produtos.length; i++) {
 			if(produtos[i] != null) {
-				System.out.println("Produto:               " + produtos[i].nome);
-				System.out.println("Codigo do Produto:     " + produtos[i].codigo);
-				System.out.println("Preco unitario:        R$" + produtos[i].precoUnitario);
-				System.out.println("Quantidade:            " + produtos[i].quantidadeComprada);
+				System.out.println("Produto:               " + produtos[i].getNome());
+				System.out.println("Codigo do Produto:     " + produtos[i].getCodigo());
+				System.out.println("Preco unitario:        R$" + produtos[i].getPrecoUnitario());
+				System.out.println("Quantidade:            " + produtos[i].getQuantidadeComprada());
 				System.out.println();
 			}
 		}
@@ -78,17 +96,6 @@ public class Compra {
 			System.out.printf("Numero de Parcelas:     %d%n", quantidadeParcelas);
 			System.out.printf("Valor de cada parcela:  R$%.2f%n", this.total / quantidadeParcelas);
 			System.out.printf("Valor total da compra:  R$%.2f", this.total);
-		}
-		
+		}	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

@@ -2,6 +2,7 @@ package compra;
 
 import java.util.Scanner;
 
+
 public class Registradora {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -15,9 +16,9 @@ public class Registradora {
 			String nome = scan.next();
 			System.out.printf("Informe o codigo de %s: ", nome);
 			int codigo = scan.nextInt();
-			for(int i = 0; i < c.produtos.length; i++) {
-				if(c.produtos[i] != null) {
-					while(c.produtos[i].codigo == codigo && c.produtos[i].nome != nome) {
+			for(int i = 0; i < c.getItensDeCompra().length; i++) {
+				if(c.getItensDeCompra()[i] != null) {
+					while(c.getItensDeCompra()[i].getCodigo() == codigo && c.getItensDeCompra()[i].getNome() != nome) {
 						System.out.print("Erro, ja existe um produto com este codigo, informe outro: ");
 						codigo = scan.nextInt();
 					}
@@ -59,10 +60,10 @@ public class Registradora {
 				System.out.print("No minimo 1 parcela. Informe em quantas parcelas vai querer passar: ");
 				quantidadeParcelas = scan.nextInt();
 			}
-			c.quantidadeParcelas = quantidadeParcelas;
+			c.setQuantidadeParcelas(quantidadeParcelas);
 		}
 		
-		c.formaDePagamento = formaDePagamento;
+		c.setFormaDePagamento(formaDePagamento);
 		
 		switch(formaDePagamento) {
 		case 1:

@@ -1,10 +1,10 @@
 package compra;
 
 public class ItemDeCompra {
-	int codigo;
-	String nome;
-	double precoUnitario;
-	int quantidadeComprada;
+	private int codigo;
+	private String nome;
+	private double precoUnitario;
+	private int quantidadeComprada;
 	
 	ItemDeCompra(int codigo, String nome, double precoUnitario, int quantidadeComprada){
 		this.codigo = codigo;
