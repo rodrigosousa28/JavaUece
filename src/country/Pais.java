@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 public class Pais {
 	//Atributos da classe
-	String nomePais;
-	String nomeCapital;
-	double dimensao;
-	String fronteira;
+	private String nomePais;
+	private String nomeCapital;
+	private double dimensao;
+	private String fronteira;
 	
 	//Construtor
 	Pais(String nomePais, String nomeCapital, double dimensao){
